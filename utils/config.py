@@ -1,0 +1,17 @@
+db_str_mongo = "localhost#27017#testUser#user@123#cq_icco_master"
+#db_str_mysql = "159.89.161.126#ai-user#sWS6eKC6h4rA22Dv#icco_master"
+db_str_mongo_old = "localhost#27017#testUser#user@123#cq_icco_master"
+db_str_mysql = "20.12.46.172#ai-user1#User@123#cq_icco_master"
+#db_str_mongo_old = "localhost#27017#testUser#user@123#icco_test"
+SECRET_KEY = 'thisisthesecretkey'
+cust_cost_file = "Verb_24.csv"
+shelveFile_sub = "/home/durga/Customer_cost_data/sub_data"
+shelveFile_all = "/home/durga/Customer_cost_data/data_new"
+csv_path = "home/durga/icco_api_dev/data"
+host_ip = "20.12.46.172"
+port_num = "4000"
+DB_CONNECTION_STR_UPDATED = "localhost#ai-user#User@123#cq_icco_master_new"
+dbstring = "localhost#ai-user#User@123#cq_icco_master"
+file_path = "/home/azureuser/RI_upload_files/"
+ingram_cols = ["no.", "end-customer", "subscription id", "service description", "order number", "qty", "unit price", "discount/promo", "duration", "net price", "subscription", "domain name", "cost types"]
+carasoft_cols = ['customer id', 'customer name', 'subscription id', 'description', 'meter description', 'domain name', 'subscription start', 'subscription end', 'unit price', 'qty', 'total price', 'cost types']

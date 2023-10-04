@@ -1,0 +1,39 @@
+properties([
+    pipelineTriggers([
+        githubPush()
+    ])
+])
+
+pipeline {
+    agent {
+        node {
+            label 'icco-api-data-ingestion-redis-server1'
+        }
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout(
+                    scmGit(
+                        branches: [[name: '*/Staging']],
+                        extensions: [],
+                        userRemoteConfigs: [[credentialsId: 'prasad_github_token', url: 'https://github.com/CogniquestAI/ICCO_BE.git']]
+                    )
+                )
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'cd docker && sudo docker-compose down' // Stop and remove the existing containers
+                sh 'cd docker && sudo docker-compose build' // Build the Docker images
+                sh 'cd docker && sudo docker-compose pull' // Pull the latest code changes
+                sh 'cd docker && sudo docker-compose up -d' // Run the containers in the background
+            }
+        }
+    }
+  // triggers {
+  //   githubPush()
+  // }
+}

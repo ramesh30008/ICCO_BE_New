@@ -1,0 +1,7 @@
+{
+"CentralIndia":["IST Time(GMT+5:30)","Asia/Kolkata"],
+ "EastUS":[" EST Time(GMT-5)","US/Eastern"],
+ "WestUS":[" PST Time(GMT-8)","US/Pacific"],
+"default":["UTC Time(GMT)", "UTC"]
+}
+
